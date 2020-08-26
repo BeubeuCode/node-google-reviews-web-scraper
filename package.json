@@ -4,7 +4,7 @@
   "description": "Retrieves google reviews through a web scraper and returns it as a json array",
   "main": "index.js",
   "scripts": {
-    "run": "node index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Benoît ARNOULT",
