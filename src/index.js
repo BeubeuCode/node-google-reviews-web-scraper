@@ -11,14 +11,28 @@ const connect = async (url) => {
         for (let elements of reviewAuthorNamesClasses) {
             reviewAuthorNames.push(elements.innerText);
         }
-		let date = document.querySelector('.section-review-publish-date').innerText;
-		let rating = document.querySelector('.section-review-stars').getAttribute("aria-label"); 
-        let reviewContent = document.querySelector('.section-review-text').innerText;
+        let datesClasses = document.getElementsByClassName('section-review-publish-date');
+        let dates = [];
+        for(let elements of datesClasses) {
+            dates.push(el.innerText);
+        }
+
+        let ratingsClasses = document.getElementsByClassName('section-review-stars');
+        let ratings = [];
+        for (let elements of ratingsClasses) {
+            ratings.push(elements.innerText);
+        }
+
+        let reviewsContentClasses = document.getElementsByClassName('section-review-text');
+        let reviewsContent = []
+        for(let elements of reviewsContentClasses) {
+            reviewsContent.push(elements.innerText);
+        }
         return {
             reviewAuthorNames,
-            date,
-            rating,
-            reviewContent
+            dates,
+            ratings,
+            reviewsContent
         }
     })
     browser.close();
