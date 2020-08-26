@@ -42,8 +42,7 @@ const connect = async (url) => {
 
 const getReviews = (url) => {
     connect(url).then((data) => {
-        // console.table(data);
-        // TODO process data
+        console.log(JSON.stringify(data));
     });
 };
 
