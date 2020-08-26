@@ -9,7 +9,7 @@ const connect = async (url) => {
         let reviewAuthorNamesClasses = document.getElementsByClassName('section-review-title');
         let reviewAuthorNames = [];
         for (let elements of reviewAuthorNamesClasses) {
-            reviewAuthorNames.push(elements.innerHTML);
+            reviewAuthorNames.push(elements.innerText);
         }
 		let date = document.querySelector('.section-review-publish-date').innerText;
 		let rating = document.querySelector('.section-review-stars').getAttribute("aria-label"); 
