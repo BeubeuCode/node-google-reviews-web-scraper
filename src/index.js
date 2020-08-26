@@ -14,7 +14,7 @@ const connect = async (url) => {
         let datesClasses = document.getElementsByClassName('section-review-publish-date');
         let dates = [];
         for(let elements of datesClasses) {
-            dates.push(el.innerText);
+            dates.push(elements.innerText);
         }
 
         let ratingsClasses = document.getElementsByClassName('section-review-stars');
