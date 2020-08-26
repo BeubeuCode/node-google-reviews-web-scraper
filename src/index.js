@@ -3,11 +3,16 @@ const express = require('express');
 const app = express();
 
 const connect = async (url) => {
+    console.log('Launching headless chrome...');
     url = url.toString();
     const browser = await puppeteer.launch({args: ['--disabled-setuid-sandbox', '--no-sandbox']});
     const page = await browser.newPage();
+    console.log('going to url');
     await page.goto(url);
+    console.log(page.url);
+    console.log('waiting for selector');
     await page.waitForSelector('.section-review-text');
+    console.log('it\'s here ! now loop through data...')
     const data = await page.evaluate(() => {
         let reviewAuthorNamesClasses = document.getElementsByClassName('section-review-title');
         let reviewAuthorNames = [];
@@ -31,6 +36,7 @@ const connect = async (url) => {
         for(let elements of reviewsContentClasses) {
             reviewsContent.push(elements.innerText);
         }
+        console.log('looping done, reeturning data...');
         return {
             reviewAuthorNames,
             dates,
