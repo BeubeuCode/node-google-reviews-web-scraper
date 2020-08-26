@@ -1,4 +1,5 @@
-const puppeteer = require('puppeteer');
+const puppeteer  = require('puppeteer');
+const http = require('http');
 
 const connect = async (url) => {
     const browser = await puppeteer.launch({args: ['--disabled-setuid-sandbox', '--no-sandbox']});
