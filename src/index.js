@@ -7,7 +7,7 @@ const connect = async (url) => {
     const browser = await puppeteer.launch({args: ['--disabled-setuid-sandbox', '--no-sandbox']});
     const page = await browser.newPage();
     await page.goto(url);
-    await page.waitFor(1000);
+    await page.waitForSelector('.section-review-text');
     const data = await page.evaluate(() => {
         let reviewAuthorNamesClasses = document.getElementsByClassName('section-review-title');
         let reviewAuthorNames = [];
