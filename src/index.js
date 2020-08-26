@@ -1,9 +1,10 @@
 const puppeteer = require('puppeteer');
 
 const connect = async (url) => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({args: ['--disabled-setuid-sandbox', '--no-sandbox']});
     const page = await browser.newPage();
     await page.goto(url);
+    await page.waitFor(5000);
     const data = await page.evaluate(() => {
         document.getElementsByClassName('.section-review.content');
     })
