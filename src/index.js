@@ -1,16 +1,7 @@
-const cheerio = require('cheerio');
-const fetch = require('node-fetch');
+const puppeteer = require('puppeteer-core');
 
-const request = async (url) => {
-    const res = await fetch(url);
-    return res.text();
-}
 const getReviews = (url) => {
-    request(url).then((result) => {
-       let html = result;
-       const $ = cheerio.load(html)
-       console.log($('title').first().text());
-    });
+
 }
 
-getReviews("https://www.google.com/search?sxsrf=ALeKk00EiSrLos7NiyV30nvQPSxTQRBufw%3A1598455328698&ei=IH5GX4yVKsnwaKPBrpgB&q=atoutgamer&oq=atoutgamer&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIECAAQDTIECAAQDTIGCAAQDRAeMgYIABANEB4yAggmOgQIABAKOgUIABCxAzoCCAA6CAgAELEDEIMBOggILhCxAxCDAToCCC46BwgjELECECc6BwgjELACECc6BggAEA0QCjoGCAAQChAeOgoIABAIEA0QChAeUMmWqAFYr6moAWCiqqgBaAdwAHgAgAFhiAG4B5IBAjE2mAEAoAEBqgEHZ3dzLXdpesABAQ&sclient=psy-ab&ved=0ahUKEwiMpbmQlrnrAhVJOBoKHaOgCxMQ4dUDCA0&uact=5#lrd=0x47e8a17426f68255:0x6e147b67bf598b81,1,,,");
+getReviews("https://www.google.fr/maps/place/A+tout+gamer+2.0/@48.9543665,2.8773257,17z/data=!3m1!4b1!4m5!3m4!1s0x47e8a17426f68255:0x6e147b67bf598b81!8m2!3d48.954363!4d2.8795144");
