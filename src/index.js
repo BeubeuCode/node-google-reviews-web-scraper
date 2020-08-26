@@ -47,10 +47,3 @@ const getReviews = (url) => {
     });
     return JSON.stringify(rev);
 };
-
-const server = http.createServer( async (req, res) => {
-    data = await getReviews('https://www.google.com/maps/place/PACA+PROPERTY/@43.3044293,5.3650846,845m/data=!3m2!1e3!4b1!4m5!3m4!1s0x12c9c1e868092f43:0x2ad1fc8819550843!8m2!3d43.3044254!4d5.3672733')
-    res.setHeader('Content-Type', 'application/json');
-    res.writeHead(200);
-    res.end(data);
-});
