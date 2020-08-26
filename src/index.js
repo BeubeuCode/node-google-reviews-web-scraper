@@ -6,9 +6,10 @@ const request = async (url) => {
     return res.text();
 }
 const getReviews = (url) => {
-
     request(url).then((result) => {
-        console.log(result);
+       let html = result;
+       const $ = cheerio.load(html)
+       console.log($('title').first().text());
     });
 }
 
