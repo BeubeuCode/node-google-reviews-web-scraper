@@ -1,0 +1,12 @@
+{
+  "name": "google-reviews-web-scraper",
+  "version": "1.0.0",
+  "description": "Retrieves google reviews through a web scraper and returns it as a json array",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Benoît ARNOULT",
+  "license": "ISC"
+}
