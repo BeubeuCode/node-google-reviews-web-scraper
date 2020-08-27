@@ -13,10 +13,11 @@ This project aims to scrape data from the google maps business page in order to 
 ### Technologies used
 * Puppeteer
 * Express
-
+* NodeJS (duh)
 ## Usage
-There is a webserver in there, you can run it with `npm run start`, and connect to `localhost:3000` to get a json response with the url in the script. However, it is WIP so the point is just to return the data.
+There is a webserver in there, you can run it with `npm run serve`, and connect to `localhost:3000` to get a json response with the url in the script. However, it is WIP so the point is just to return the data.
 
+You can also run `npm run start`, which will show you the eiffel tower reviews (in french, cocorico !).
 ### Re-use the code
 There is only one interesting function inside the `getReviws.js` file, and it's the `getReviews(url)` method.
 ```js
