@@ -1,5 +1,5 @@
 const express = require('express');
-const { getReviews } = require('./getReviews')
+const getReviews = require('./getReviews')
 app = express();
 
 app.get('/', async (req, res) => {
