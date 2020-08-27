@@ -26,7 +26,7 @@ const getReviews = async (url) => {
         let ratingsClasses = document.getElementsByClassName('section-review-stars');
         let ratings = [];
         for (let elements of ratingsClasses) {
-            ratings.push(elements.innerText);
+            ratings.push(elements.children.length);
         }
 
         let reviewsContentClasses = document.getElementsByClassName('section-review-text');
