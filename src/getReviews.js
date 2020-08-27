@@ -44,8 +44,11 @@ const getReviews = async (url) => {
     console.log('done ! closing browser...')
     browser.close();
     console.log(data);
-    return new Promise(resolve, reject => {
+    return new Promise((resolve, reject) => {
         resolve(data);
+        if(reject) {
+            reject({error: "error while scraping data."})
+        }
     })
     
 };
