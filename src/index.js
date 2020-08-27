@@ -36,7 +36,6 @@ const connect = async (url) => {
         for(let elements of reviewsContentClasses) {
             reviewsContent.push(elements.innerText);
         }
-        console.log('looping done, reeturning data...');
         return {
             reviewAuthorNames,
             dates,
@@ -44,6 +43,7 @@ const connect = async (url) => {
             reviewsContent
         }
     })
+    console.log('done ! closing browser...')
     browser.close();
     return data;
     
@@ -54,17 +54,14 @@ const getReviews = async (url) => {
     connect(url).then((data) => {
        rev = data;
     });
-    return new Promise( resolve => {
-            JSON.stringify(rev)
-        }
-    );
+    return JSON.stringify(rev);
 };
 
 
-app.get('/', (req, res) => {
-    getReviews("https://www.google.fr/maps/place/Joaillerie+Fr%C3%A9d%C3%A9ric+Parisse/@48.9597679,2.8768007,17z/data=!3m1!4b1!4m5!3m4!1s0x47e8a103de996a61:0xae40c24c34d9e2ea!8m2!3d48.9597644!4d2.8789894").then((data) => {
-        res.status(200).json(data);
-    })
+app.get('/', async (req, res) => {
+    const data = await getReviews("https://www.google.fr/maps/place/Joaillerie+Fr%C3%A9d%C3%A9ric+Parisse/@48.9597679,2.8768007,17z/data=!3m1!4b1!4m5!3m4!1s0x47e8a103de996a61:0xae40c24c34d9e2ea!8m2!3d48.9597644!4d2.8789894")
+    res.json(data);
+
 })
 
 app.listen(3000, () => {
