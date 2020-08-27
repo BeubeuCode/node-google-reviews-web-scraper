@@ -1,5 +1,6 @@
 # node-google-reviews-web-scraper
 ## Get the reviews from any google maps business 🗺
+### Contributions are highly appreciated !
 ---
 setup :
 
