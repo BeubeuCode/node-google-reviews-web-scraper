@@ -8,7 +8,11 @@
     "serve": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Benoît ARNOULT",
+  "author": {
+    "name":"Benoît ARNOULT",
+    "email": "benoit.arnlt@gmail.com",
+    "url": "https://www.benoit-arnoult.xyz/en"
+  },
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
