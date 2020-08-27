@@ -58,7 +58,7 @@ The json object returned by the api looks like this :
     "Romain VILCOQ"
   ],
   "dates": ["il y a 5 jours", "il y a 2 semaines", "il y a 2 semaines"],
-  "ratings": ["5 étoiles", "5 étoiles", "5 étoiles"],
+  "ratings":[5, 5, 5],
   "reviewsContent": [
     "Magnifique et incontournable monument de la capitale française. A absolument faire lors de votre visite parisienne ! Haute de 321 mètres, cette tour de fer surplombe la région parisienne. Véritable prouesse architecturale et scientifique, …",
     "Un lieu toujours magnifique. Attention ne vous faites pas photographier de force par tous ces photographes qui traînent dans la tour et qui veulent vous vendre des photos à prix d'or. Évidemment les prix ne sont pas affichés et le tarif est …",

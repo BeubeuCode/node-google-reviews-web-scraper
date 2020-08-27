@@ -14,7 +14,7 @@
     "url": "https://www.benoit-arnoult.xyz/en"
   },
   "contributors": ["Benoît ARNOULT <benoit.arnlt@gmail.com> (https://www.benoit-arnoult.xyz/en)"],
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
     "puppeteer": "^5.2.1"
