@@ -13,6 +13,7 @@
     "email": "benoit.arnlt@gmail.com",
     "url": "https://www.benoit-arnoult.xyz/en"
   },
+  "contributors": ["Benoît ARNOULT <benoit.arnlt@gmail.com> (https://www.benoit-arnoult.xyz/en)"],
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
