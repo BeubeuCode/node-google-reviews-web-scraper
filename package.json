@@ -25,5 +25,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/PiiXelx64/node-google-reviews-web-scraper.git"
-  }
+  },
+  "keywords": [
+    "gmaps",
+    "web scraping",
+    "google maps",
+    "google maps reviews",
+    "express",
+    "async",
+    "puppeteer"
+  ]
 }
