@@ -2,7 +2,7 @@ const puppeteer  = require('puppeteer');
 const express = require('express');
 const app = express();
 
-const connect = async (url) => {
+const getReviews = async (url) => {
     console.log('Launching headless chrome...');
     url = url.toString();
     const browser = await puppeteer.launch({args: ['--disabled-setuid-sandbox', '--no-sandbox']});
@@ -45,23 +45,20 @@ const connect = async (url) => {
     })
     console.log('done ! closing browser...')
     browser.close();
-    return data;
+    console.log(data);
+    return new Promise(resolve, reject => {
+        resolve(data);
+    })
     
 };
 
-const getReviews = async (url) => {
-    let rev;
-    connect(url).then((data) => {
-       rev = data;
-    });
-    return JSON.stringify(rev);
-};
-
-
 app.get('/', async (req, res) => {
-    const data = await getReviews("https://www.google.fr/maps/place/Joaillerie+Fr%C3%A9d%C3%A9ric+Parisse/@48.9597679,2.8768007,17z/data=!3m1!4b1!4m5!3m4!1s0x47e8a103de996a61:0xae40c24c34d9e2ea!8m2!3d48.9597644!4d2.8789894")
-    res.json(data);
-
+    try {
+        const data = await getReviews("https://www.google.fr/maps/place/Joaillerie+Fr%C3%A9d%C3%A9ric+Parisse/@48.9597679,2.8768007,17z/data=!3m1!4b1!4m5!3m4!1s0x47e8a103de996a61:0xae40c24c34d9e2ea!8m2!3d48.9597644!4d2.8789894")
+        res.json(data);
+    }catch(e) {
+        res.send(e);
+    }
 })
 
 app.listen(3000, () => {
