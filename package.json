@@ -1,6 +1,6 @@
 {
   "name": "google-reviews-web-scraper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Retrieves google reviews through a web scraper and returns it as a json array",
   "main": "getReviews.js",
   "scripts": {
