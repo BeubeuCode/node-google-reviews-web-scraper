@@ -2,6 +2,8 @@
 ## Get the reviews from any google maps business 🗺
 ### Contributions are highly appreciated !
 ---
+`npm install google-reviews-web-scraper`
+
 setup :
 
 `npm install`
