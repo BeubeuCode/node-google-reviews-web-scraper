@@ -2,7 +2,7 @@
   "name": "google-reviews-web-scraper",
   "version": "1.0.0",
   "description": "Retrieves google reviews through a web scraper and returns it as a json array",
-  "main": "index.js",
+  "main": "getReviews.js",
   "scripts": {
     "start": "nodemon src/example.js",
     "serve": "nodemon src/server.js",
