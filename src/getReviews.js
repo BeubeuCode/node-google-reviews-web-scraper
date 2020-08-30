@@ -1,6 +1,11 @@
 const puppeteer  = require('puppeteer');
 
-const getReviews = async (url) => {
+const getReviews = async (url, output = "json") => {
+    output = output.toLowerCase();
+    if (output != "json" && output != "object") {
+        console.error('INVALID OUTPUT OPTION');
+        return;
+    }
     console.log('Launching headless chrome...');
     url = url.toString();
     const browser = await puppeteer.launch({args: ['--disabled-setuid-sandbox', '--no-sandbox']});
@@ -45,7 +50,11 @@ const getReviews = async (url) => {
     browser.close();
     console.log(data);
     return new Promise((resolve, reject) => {
-        resolve(data);
+        if(output === "json") {
+            resolve(JSON.stringify(data));
+        } else if(output === "object") {
+            resolve(data);
+        }
         if(reject) {
             reject({error: "error while scraping data."})
         }

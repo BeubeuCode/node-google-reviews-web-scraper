@@ -10,9 +10,14 @@ setup :
 
 `npm run start (launches program with nodemon)`
 
+## New in 1.0.2 !
+* Set the output method of the getReviews method with an optional second argument : "json" or "object". The default is "json".
+
 ## Description
 This project aims to scrape data from the google maps business page in order to get the reviews
 (it's not in the api, why google ?)
+
+
 ### Technologies used
 * Puppeteer
 * Express
