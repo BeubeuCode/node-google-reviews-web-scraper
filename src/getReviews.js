@@ -1,6 +1,11 @@
 const puppeteer  = require('puppeteer');
 
 const getReviews = async (url, output = "json") => {
+    output = output.toLowerCase();
+    if (output != "json" && output != "object") {
+        console.error('INVALID OUTPUT OPTION');
+        return;
+    }
     console.log('Launching headless chrome...');
     url = url.toString();
     const browser = await puppeteer.launch({args: ['--disabled-setuid-sandbox', '--no-sandbox']});
