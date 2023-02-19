@@ -14,27 +14,27 @@ const getReviews = async (url, output = "json") => {
     await page.goto(url);
     console.log(page.url);
     console.log('waiting for selector');
-    await page.waitForSelector('.section-review-text');
+    await page.waitForSelector('.wiI7pd');
     console.log('it\'s here ! now loop through data...')
     const data = await page.evaluate(() => {
-        let reviewAuthorNamesClasses = document.getElementsByClassName('section-review-title');
+        let reviewAuthorNamesClasses = document.getElementsByClassName('d4r55');
         let reviewAuthorNames = [];
         for (let elements of reviewAuthorNamesClasses) {
             reviewAuthorNames.push(elements.innerText);
         }
-        let datesClasses = document.getElementsByClassName('section-review-publish-date');
+        let datesClasses = document.getElementsByClassName('PIpr3c');
         let dates = [];
         for(let elements of datesClasses) {
             dates.push(elements.innerText);
         }
 
-        let ratingsClasses = document.getElementsByClassName('section-review-stars');
+        let ratingsClasses = document.getElementsByClassName('kvMYJc');
         let ratings = [];
         for (let elements of ratingsClasses) {
             ratings.push(elements.children.length);
         }
 
-        let reviewsContentClasses = document.getElementsByClassName('section-review-text');
+        let reviewsContentClasses = document.getElementsByClassName('wiI7pd');
         let reviewsContent = []
         for(let elements of reviewsContentClasses) {
             reviewsContent.push(elements.innerText);
