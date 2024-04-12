@@ -1,3 +1,4 @@
+# {DEPRECATED} - This library is no longer maintained, and apparently doesn't work anymore. Will rework it some day but for now it's dead.
 # node-google-reviews-web-scraper
 ## Get the reviews from any google maps business 🗺
 ### Contributions are highly appreciated !
